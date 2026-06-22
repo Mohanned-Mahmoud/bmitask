@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Poppins:wght@700&display=swap');
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --font-sans: var(--app-font-sans);
+  --font-serif: var(--app-font-serif);
+  --font-mono: var(--app-font-mono);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --background: 188 62% 65%;
+  --foreground: 200 50% 20%;
+  --border: 188 30% 75%;
+  --card: 188 50% 80%;
+  --card-foreground: 200 50% 20%;
+  --primary: 188 62% 65%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 175 43% 56%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 188 30% 75%;
+  --muted-foreground: 200 30% 40%;
+  --accent: 188 62% 65%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --input: 188 30% 75%;
+  --ring: 188 62% 65%;
+  --app-font-sans: 'Almarai', 'Arial', sans-serif;
+  --app-font-serif: 'Almarai', serif;
+  --app-font-mono: monospace;
+  --radius: 0.5rem;
+  --navy: #296184;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Almarai', 'Arial', sans-serif;
+  direction: rtl;
+  background: #32C3DE;
+}
+
+.font-arabic {
+  font-family: 'Almarai', sans-serif;
+}
+
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+.app-bg {
+  background: linear-gradient(to left, #54C7B8, #5AC9E4);
+  min-height: 100dvh;
+  width: 100%;
+  max-width: 430px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.binary-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  font-family: 'Poppins', monospace;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.18);
+  font-weight: 700;
+  letter-spacing: 4px;
+  line-height: 1.9;
+  overflow: hidden;
+  white-space: pre-wrap;
+  word-break: break-all;
+  padding: 8px 12px;
+}
+
+.hex-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+.hex-button-inner {
+  position: relative;
+  width: 260px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hex-button img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.hex-button-label {
+  position: relative;
+  z-index: 2;
+  color: #296184;
+  font-family: 'Almarai', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.glass-input-wrapper {
+  position: relative;
+  width: 280px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+}
+
+.glass-input-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.glass-input-field {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  text-align: center;
+  font-family: 'Almarai', sans-serif;
+  font-size: 1.1rem;
+  color: #296184;
+  direction: rtl;
+}
+
+.glass-input-field::placeholder {
+  color: rgba(41, 97, 132, 0.6);
+  font-family: 'Almarai', sans-serif;
+}
+
+.corner-decoration {
+  position: absolute;
+  width: 100px;
+  height: 60px;
+  pointer-events: none;
+}
+
+.result-bottom-white {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 45%;
+  background: white;
+  border-radius: 40px 40px 0 0;
+}
+
+.result-bottom-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 28px 16px;
+  text-align: center;
+  direction: rtl;
+}
+
+.home-icon-btn {
+  width: 54px;
+  height: 54px;
+  background: rgba(255,255,255,0.25);
+  border: 2px solid rgba(255,255,255,0.5);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+}
+
+.scale-transition {
+  transition: transform 0.3s ease;
+}
+
+.scale-transition:active {
+  transform: scale(0.95);
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

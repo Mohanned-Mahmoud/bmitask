@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "توازنها صح - حاسبة BMI"
+version = "1.0.0"
+id = "artifacts/bmi-app"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24102
+
+[services.development]
+run = "pnpm --filter @workspace/bmi-app run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/bmi-app", "run", "build" ]
+publicDir = "artifacts/bmi-app/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24102"
+BASE_PATH = "/"
