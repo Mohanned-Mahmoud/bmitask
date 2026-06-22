@@ -1,5 +1,5 @@
-const ROW = "1 0 1 1 0 1 0 1 0 1 1 0 0 1 0 0 1 0 1 1 0 1 0 0 1 1 0 1 0 1 0 0 1 0 1 1 0 0 1 0 1 1 0 1 1 0 1 0 1 0 1 1\n";
-const BINARY_TEXT = ROW.repeat(30);
+const UNIT = "1 0 1 1 0 1 0 1 0 1 1 0 0 1 0 0 1 0 1 1 0 1 0 0 1 1 0 1 0 1 0 0 1 0 1 1 0 0 1 0 1 1 0 1 1 0 1 0 1 0 1 1 ";
+const BINARY_TEXT = UNIT.repeat(120);
 
 export default function BinaryBackground() {
   return (
@@ -29,7 +29,7 @@ export default function BinaryBackground() {
           color: "rgba(255,255,255,0.18)",
           fontWeight: 700,
           letterSpacing: "5px",
-          lineHeight: "2.1",
+          lineHeight: "1.3",
           whiteSpace: "pre-wrap",
           wordBreak: "break-all",
           padding: "10px 14px",
